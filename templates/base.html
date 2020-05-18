@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title> LeafDoctor </title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="{{url_for('static',filename='image/logo_leaf.png')}}" alt="" width="150" height="100">
+             LeafDoctor</a>
+       
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          
+        </div>
+    </nav>
+    </div>
+    <div class="container">
+        <br/>
+    
+        <h1> Welcome to LeafDoctor </h1>
+            <br/>
+            <p>
+            You can Upload your Picture in this platform and we will let you know if your plant is Healthy or Not
+            </p>
+            <br>
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <label for="upload"> Upload to predict </label>
+                <input type="file" name="image" required="true">
+                <input type="submit" value="Upload and Diagnose">
+            </form>
+        
+    {% if fileupload %}  
+       <div class="container">
+        <br/>
+            <div class="row">
+                <div class="col-md-6"> 
+                    <img src="{{url_for('static',filename='uploads/')}}{{img_name}}" alt="leafdoctor" width="300" height="300">
+                </div>
+                   
+
+                <div class="col-md-6">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                    <h5 align="justify">{{a}}</h5>
+                     <br>
+                      <br>
+                     <h5 align="justify">{{b}}</h5>
+                    
+                </div>
+
+            </div>
+        </div>
+    {% endif %}
+
+    </div>
+
+</body>
+</html>
